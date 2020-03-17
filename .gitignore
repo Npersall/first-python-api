@@ -83,7 +83,6 @@ env.bak/
 venv.bak/
 .vscode/
 
-*.db*
 
 # static files generated from Django application using `collectstatic`
 media

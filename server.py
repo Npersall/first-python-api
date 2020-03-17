@@ -20,31 +20,6 @@ class Tracks(Resource):
         query = conn.execute("select trackid, name, composer from tracks;")
         result = {'data': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
         return jsonify(result)
-
-    def post(self):
-            conn = db_connect.connect()
-            print(request.json)
-            LastName = request.json['LastName']
-            FirstName = request.json['FirstName']
-            Title = request.json['Title']
-            ReportsTo = request.json['ReportsTo']
-            BirthDate = request.json['BirthDate']
-            HireDate = request.json['HireDate']
-            Address = request.json['Address']
-            City = request.json['City']
-            State = request.json['State']
-            Country = request.json['Country']
-            PostalCode = request.json['PostalCode']
-            Phone = request.json['Phone']
-            Fax = request.json['Fax']
-            Email = request.json['Email']
-            query = conn.execute("insert into employees values(null,'{0}','{1}','{2}','{3}', \
-                                '{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}', \
-                                '{13}')".format(LastName,FirstName,Title,
-                                ReportsTo, BirthDate, HireDate, Address,
-                                City, State, Country, PostalCode, Phone, Fax,
-                                Email))
-            return {'status':'success'}
     
 class Employees_Name(Resource):
     def get(self, employee_id):
