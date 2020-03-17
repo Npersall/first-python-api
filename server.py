@@ -31,4 +31,5 @@ class Employees_Name(Resource):
 
 api.add_resource(Employees, '/employees') # Route 1
 api.add_resource(Tracks, '/tracks') # Route 2
+api.add_resource(Employees_Name, '/emoployees/<employee_id') # Route 3
 
