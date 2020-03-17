@@ -28,3 +28,5 @@ class Employees_Name(Resource):
         query = conn.execute("select * from employees where Employee_ID =%d" %int(employee_id))
         result = {'data':[dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
         return jsonify(result)
+
+api.add_resource(Employees, '/employees') # Route 1
